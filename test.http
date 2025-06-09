@@ -1,0 +1,47 @@
+@baseUrl = http://localhost:3000/api
+
+#get all todos
+# @name getTodos
+
+GET {{@baseUrl}}/todos
+
+###
+
+# @name addTodo
+POST {{@baseUrl}}/todos
+Content-Type: application/json
+{
+    "id": 102,
+  "todo": "New Todo",
+  "completed": false,
+  "userId": 100
+}
+
+###
+
+# @name patchTodo
+PATCH {{@baseUrl}}/todos/102
+Content-Type: application/json
+
+{
+  "todo": "Patched Todo",
+  "completed": true
+}
+
+###
+
+# @name updateTodo
+PUT http://localhost:3000/api/todos/20
+Content-Type: application/json
+
+{
+  "todo": "Updated Todo",
+  "completed": true,
+  "userId": 100
+}
+
+###
+# @name deleteTodo
+DELETE http://localhost:3000/api/todos/5
+
+
